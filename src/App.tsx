@@ -1,169 +1,341 @@
 // src/App.tsx
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { AuthProvider } from "@/hooks/useAuth";
-import RequireAuth from "@/routes/RequireAuth";
-import { ExperimentDebugPanel } from "@/components/ExperimentDebugPanel";
-import { OfflineIndicator } from "@/components/OfflineIndicator";
-import FooterLegal from "@/components/FooterLegal";
-import { legalRouteElements } from "@/routes/legalRoutes";
-import { publicRouteElements } from "@/routes/publicRoutes";
-
-import Index from "./pages/Index";
-import Auth from "./pages/Auth";
-import ResetPassword from "./pages/ResetPassword";
-import Help from "./pages/Help";
-
-import Dashboard from "./pages/Dashboard";
-import Overlays from "./pages/Overlays";
-import OverlaysCommunity from "./pages/OverlaysCommunity";
-import OverlayUpload from "./pages/OverlayUpload";
-import Media from "./pages/Media";
-import Minigames from "./pages/Minigames";
-import Spotify from "./pages/Spotify";
-import Integrations from "./pages/Integrations";
-import Subscribe from "./pages/Subscribe";
-
-import LiveLayout from "./pages/live/LiveLayout";
-import LiveSetup from "./pages/live/LiveSetup";
-import LiveDashboard from "./pages/live/LiveDashboard";
-import LiveScenes from "./pages/live/LiveScenes";
-
-import Bot from "./pages/Bot";
-import BotIndex from "@/pages/bot/Index";
-import CommandsPage from "@/pages/bot/CommandsPage";
-import ModerationPage from "@/pages/bot/ModerationPage";
-import AiSupportPage from "@/pages/bot/AiSupportPage";
-import StatusPage from "@/pages/bot/StatusPage";
-
-import Analytics from "./pages/Analytics";
-import Settings from "./pages/Settings";
-import CheckoutSuccess from "./pages/CheckoutSuccess";
-import CheckoutCancel from "./pages/CheckoutCancel";
-import NotFound from "./pages/NotFound";
-import RouteDebug from "./debug/RouteDebug";
-
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: { staleTime: 1000 * 60 * 5, refetchOnWindowFocus: false },
-  },
-});
+import React from "react";
+import "./App.css";
 
 /**
- * Ziel:
- * - Deine App bleibt wie gehabt "App-first".
- * - ABER: Wenn du diese App-Deployments zusätzlich unter
- *   clip-boost-website.online laufen lässt, darf "/" NICHT auf /auth zeigen.
+ * CLiP-BOOsT Website (Landing)
+ * Zweck:
+ * - Öffentlich erreichbare Produktseite für Review
+ * - Kein Login-Zwang
+ * - Keine Abhängigkeit von der eigentlichen App-Struktur
  *
- * Lösung:
- * - Domain-abhängiges Root-Routing:
- *   Website-Domain -> /features (öffentlich)
- *   App-Domain/Local -> /auth
+ * Dieses Repo ist NUR die Website.
+ * Keine App-Routen, kein RequireAuth, keine Live/Bot/Subscribe-Imports.
  */
-function App() {
-  const host =
-    typeof window !== "undefined" ? window.location.hostname : "";
 
-  const isWebsiteDomain =
-    host === "clip-boost-website.online" ||
-    host === "www.clip-boost-website.online";
-
-  // Optional: erleichtert Tests auf Vercel Preview-URLs der Website
-  const isWebsitePreview =
-    host.endsWith(".vercel.app") && host.includes("clip-boost-website");
-
-  const usePublicRoot = isWebsiteDomain || isWebsitePreview;
+export default function App() {
+  const year = new Date().getFullYear();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <OfflineIndicator />
-        <AuthProvider>
-          <BrowserRouter>
-            <RouteDebug />
-            <main className="min-h-screen bg-background text-foreground">
-              <Routes>
-                {/* Root-Strategie: Website-Domain öffentlich, sonst Login */}
-                <Route
-                  path="/"
-                  element={
-                    <Navigate to={usePublicRoot ? "/features" : "/auth"} replace />
-                  }
-                />
+    <div className="cbw">
+      <header className="cbw-header">
+        <div className="cbw-container cbw-header-row">
+          <div className="cbw-brand">
+            <span className="cbw-dot" />
+            <div className="cbw-brand-text">
+              <div className="cbw-brand-name">CLiP-BOOsT</div>
+              <div className="cbw-brand-sub">Stream Assets & Overlay Platform</div>
+            </div>
+          </div>
 
-                {/* Alias */}
-                <Route
-                  path="/login"
-                  element={
-                    <Navigate to={usePublicRoot ? "/features" : "/auth"} replace />
-                  }
-                />
+          <nav className="cbw-nav">
+            <a href="#features">Features</a>
+            <a href="#how">Ablauf</a>
+            <a href="#screens">Screens</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Kontakt</a>
+          </nav>
 
-                {/* Public */}
-                <Route path="/auth" element={<Auth />} />
-                <Route path="/reset-password" element={<ResetPassword />} />
-                <Route path="/help" element={<Help />} />
-                {publicRouteElements}
-                {legalRouteElements}
-                <Route path="/checkout/success" element={<CheckoutSuccess />} />
-                <Route path="/checkout/cancel" element={<CheckoutCancel />} />
+          <div className="cbw-cta">
+            <a className="cbw-btn cbw-btn-ghost" href="#contact">
+              Kontakt
+            </a>
+            <a
+              className="cbw-btn cbw-btn-primary"
+              href="https://clip-boost.online"
+              rel="noreferrer"
+            >
+              Zur App / Login
+            </a>
+          </div>
+        </div>
+      </header>
 
-                {/* Optional erreichbar, aber nicht Root */}
-                <Route path="/index" element={<Index />} />
+      <main>
+        <section className="cbw-hero">
+          <div className="cbw-container cbw-hero-grid">
+            <div>
+              <div className="cbw-pill">Öffentliche Produktseite</div>
+              <h1>
+                Professionelle Overlays,
+                <br />
+                klare Workflows, KI-gestützte Erstellung
+              </h1>
+              <p className="cbw-lead">
+                CLiP-BOOsT ist eine Web-Plattform zur Verwaltung und Erstellung von
+                Streaming-Overlays und Assets. Diese Website ist bewusst eine
+                öffentliche Informationsseite und keine Login-Homepage.
+              </p>
 
-                {/* Protected */}
-                <Route element={<RequireAuth />}>
-                  <Route path="/dashboard" element={<Dashboard />} />
-                  <Route path="/overlays" element={<Overlays />} />
-                  <Route path="/overlays/community" element={<OverlaysCommunity />} />
-                  <Route path="/overlays/upload" element={<OverlayUpload />} />
-                  <Route path="/media" element={<Media />} />
-                  <Route path="/minigames" element={<Minigames />} />
-                  <Route path="/spotify" element={<Spotify />} />
-                  <Route path="/integrations" element={<Integrations />} />
-                  <Route path="/subscribe" element={<Subscribe />} />
-                  <Route path="/analytics" element={<Analytics />} />
-                  <Route path="/settings" element={<Settings />} />
+              <div className="cbw-hero-actions">
+                <a className="cbw-btn cbw-btn-primary" href="#features">
+                  Features ansehen
+                </a>
+                <a className="cbw-btn cbw-btn-secondary" href="#how">
+                  So funktioniert&apos;s
+                </a>
+              </div>
 
-                  {/* Live */}
-                  <Route path="/live" element={<LiveLayout />}>
-                    <Route index element={<LiveSetup />} />
-                    <Route path="setup" element={<LiveSetup />} />
-                    <Route path="dashboard" element={<LiveDashboard />} />
-                    <Route path="scenes" element={<LiveScenes />} />
-                  </Route>
+              <div className="cbw-meta">
+                <div className="cbw-meta-card">
+                  <div className="cbw-meta-label">Zielgruppe</div>
+                  <div className="cbw-meta-value">Streamer, Creators, Teams</div>
+                </div>
+                <div className="cbw-meta-card">
+                  <div className="cbw-meta-label">Fokus</div>
+                  <div className="cbw-meta-value">Overlays, Templates, AI Assets</div>
+                </div>
+                <div className="cbw-meta-card">
+                  <div className="cbw-meta-label">Modell</div>
+                  <div className="cbw-meta-value">Free / PRO / DayPass</div>
+                </div>
+              </div>
+            </div>
 
-                  {/* Bot */}
-                  <Route path="/bot" element={<Bot />}>
-                    <Route index element={<BotIndex />} />
-                    <Route path="commands" element={<CommandsPage />} />
-                    <Route path="moderation" element={<ModerationPage />} />
-                    <Route path="ai" element={<AiSupportPage />} />
-                    <Route path="status" element={<StatusPage />} />
-                  </Route>
-                </Route>
+            <div className="cbw-visual">
+              <div className="cbw-visual-panel">
+                <div className="cbw-visual-head">
+                  <span />
+                  <span />
+                  <span />
+                  <strong>Preview</strong>
+                </div>
+                <div className="cbw-visual-body">
+                  <div className="cbw-visual-large" />
+                  <div className="cbw-visual-row">
+                    <div />
+                    <div />
+                    <div />
+                  </div>
+                  <div className="cbw-visual-lines">
+                    <div />
+                    <div />
+                  </div>
+                </div>
+              </div>
+              <div className="cbw-hint">
+                Platzhalter-Visual – später durch echte Screenshots ersetzen.
+              </div>
+            </div>
+          </div>
+        </section>
 
-                {/* Redirects */}
-                <Route path="/livestream/*" element={<Navigate to="/live" replace />} />
+        <section className="cbw-strip">
+          <div className="cbw-container cbw-strip-row">
+            <span>Öffentlich erreichbar</span>
+            <i />
+            <span>Kein Login-Zwang</span>
+            <i />
+            <span>Review-konformes Setup</span>
+            <i />
+            <span>Transparente Produktbeschreibung</span>
+          </div>
+        </section>
 
-                {/* 404 */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+        <section id="features" className="cbw-section">
+          <div className="cbw-container">
+            <div className="cbw-section-head">
+              <h2>Kernfunktionen</h2>
+              <p>
+                Fokus auf skalierbare Stream-Assets, konsistente Designs und eine
+                klare Nutzerführung.
+              </p>
+            </div>
 
-              <FooterLegal />
-            </main>
+            <div className="cbw-grid">
+              <div className="cbw-card">
+                <h3>Overlay-Management</h3>
+                <p>
+                  Zentrale Verwaltung eigener und vorgefertigter Overlays mit
+                  strukturierten Workflows.
+                </p>
+              </div>
+              <div className="cbw-card">
+                <h3>AI-Overlay-Generierung</h3>
+                <p>
+                  Stilbasierte Erstellung neuer Designs mit Fokus auf Lesbarkeit
+                  und Stream-Kompatibilität.
+                </p>
+              </div>
+              <div className="cbw-card">
+                <h3>Community & Templates</h3>
+                <p>
+                  Entdecken, testen und iterieren – optional mit kuratierten
+                  Vorlagen und Community-Inhalten.
+                </p>
+              </div>
+              <div className="cbw-card">
+                <h3>Livestream-Setup</h3>
+                <p>
+                  Aufbau für Widgets/Integrationen und strukturierte Aktivierung
+                  im Livebetrieb.
+                </p>
+              </div>
+              <div className="cbw-card">
+                <h3>Monetarisierung</h3>
+                <p>
+                  Grundlage für Free/PRO/DayPass sowie Asset-Bundles und
+                  erweiterte Limits.
+                </p>
+              </div>
+              <div className="cbw-card">
+                <h3>Compliance-ready</h3>
+                <p>
+                  Saubere Trennung von Website und App zur Erfüllung von
+                  Plattform-Review-Anforderungen.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <ExperimentDebugPanel />
-          </BrowserRouter>
-        </AuthProvider>
-      </TooltipProvider>
-    </QueryClientProvider>
+        <section id="how" className="cbw-section cbw-section-alt">
+          <div className="cbw-container">
+            <div className="cbw-section-head">
+              <h2>So funktioniert&apos;s</h2>
+              <p>Drei Schritte vom Setup bis zum einsatzbereiten Stream-Look.</p>
+            </div>
+
+            <div className="cbw-grid-3">
+              <div className="cbw-card">
+                <span className="cbw-step">01</span>
+                <h3>Account & Projekt</h3>
+                <p>App-Zugang anlegen und das Streaming-Profil initialisieren.</p>
+              </div>
+              <div className="cbw-card">
+                <span className="cbw-step">02</span>
+                <h3>Overlays auswählen/erstellen</h3>
+                <p>Templates nutzen oder neue Designs KI-gestützt erzeugen.</p>
+              </div>
+              <div className="cbw-card">
+                <span className="cbw-step">03</span>
+                <h3>Im Stream einsetzen</h3>
+                <p>Assets integrieren, testen und das Setup iterativ optimieren.</p>
+              </div>
+            </div>
+
+            <div className="cbw-note">
+              <strong>Reviewer-Hinweis:</strong> Diese Seite ist eine öffentliche
+              Produktseite. Login zur App erfolgt nur optional über den Button.
+            </div>
+          </div>
+        </section>
+
+        <section id="screens" className="cbw-section">
+          <div className="cbw-container">
+            <div className="cbw-section-head">
+              <h2>App-Screens</h2>
+              <p>
+                Platzhalter für Screenshots (Dashboard, Overlays, AI-Generator,
+                Community, Livestream-Setup).
+              </p>
+            </div>
+
+            <div className="cbw-grid">
+              {[
+                "Dashboard",
+                "Overlays",
+                "AI Generator",
+                "Community",
+                "Livestream Setup",
+                "Account/Billing",
+              ].map((x) => (
+                <div className="cbw-card" key={x}>
+                  <div className="cbw-screen" />
+                  <div className="cbw-screen-label">{x}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" className="cbw-section">
+          <div className="cbw-container">
+            <div className="cbw-section-head">
+              <h2>FAQ</h2>
+              <p>Kurze Antworten für Nutzer und Plattform-Review.</p>
+            </div>
+
+            <div className="cbw-faq">
+              <details className="cbw-faq-item">
+                <summary>Ist diese Seite die Login-Seite?</summary>
+                <p>
+                  Nein. Das ist eine öffentliche Informationsseite. Der Login zur
+                  App erfolgt nur über den Button und wird nicht erzwungen.
+                </p>
+              </details>
+              <details className="cbw-faq-item">
+                <summary>Wofür ist CLiP-BOOsT gedacht?</summary>
+                <p>
+                  Für Streamer, die Overlays und Stream-Assets effizient verwalten,
+                  testen und KI-gestützt erstellen möchten.
+                </p>
+              </details>
+              <details className="cbw-faq-item">
+                <summary>Gibt es kostenlose Nutzung?</summary>
+                <p>
+                  Ein Free-Einstieg ist vorgesehen. Erweiterte Funktionen können
+                  als PRO oder DayPass angeboten werden.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="cbw-section cbw-section-alt">
+          <div className="cbw-container">
+            <div className="cbw-contact">
+              <div>
+                <h2>Kontakt</h2>
+                <p>
+                  Support, Plattform-Review oder Business-Anfragen.
+                </p>
+              </div>
+              <div className="cbw-contact-box">
+                <div className="cbw-meta-label">E-Mail</div>
+                <a href="mailto:support@clip-boost-website.online">
+                  support@clip-boost-website.online
+                </a>
+                <div className="cbw-meta-label" style={{ marginTop: 12 }}>
+                  Produkt
+                </div>
+                <div>CLiP-BOOsT</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="cbw-footer">
+        <div className="cbw-container cbw-footer-row">
+          <div>
+            <div className="cbw-brand">
+              <span className="cbw-dot" />
+              <div className="cbw-brand-text">
+                <div className="cbw-brand-name">CLiP-BOOsT</div>
+                <div className="cbw-brand-sub">Public Product Website</div>
+              </div>
+            </div>
+            <small>© {year} CLiP-BOOsT</small>
+          </div>
+
+          <div className="cbw-footer-links">
+            <a href="/impressum">Impressum</a>
+            <a href="/datenschutz">Datenschutz</a>
+            <a href="/agb">AGB / Terms</a>
+          </div>
+
+          <div>
+            <a
+              className="cbw-btn cbw-btn-primary"
+              href="https://clip-boost.online"
+              rel="noreferrer"
+            >
+              Zur App / Login
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
-
-export default App;

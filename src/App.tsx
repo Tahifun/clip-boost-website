@@ -1,5 +1,4 @@
 // src/App.tsx
-import React from "react";
 import "./App.css";
 
 /**
@@ -10,7 +9,6 @@ import "./App.css";
  * - Keine Abhängigkeit von der eigentlichen App-Struktur
  *
  * Dieses Repo ist NUR die Website.
- * Keine App-Routen, kein RequireAuth, keine Live/Bot/Subscribe-Imports.
  */
 
 export default function App() {
@@ -287,9 +285,7 @@ export default function App() {
             <div className="cbw-contact">
               <div>
                 <h2>Kontakt</h2>
-                <p>
-                  Support, Plattform-Review oder Business-Anfragen.
-                </p>
+                <p>Support, Plattform-Review oder Business-Anfragen.</p>
               </div>
               <div className="cbw-contact-box">
                 <div className="cbw-meta-label">E-Mail</div>

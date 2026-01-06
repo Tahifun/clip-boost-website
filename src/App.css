@@ -1,4 +1,32 @@
-/* src/App.css */
+/* Farb- und Layout-Variablen */
+:root {
+  --cb-bg-0: #050814;
+  --cb-bg-1: #070c18;
+  --cb-bg-2: #040611;
+  --cb-text: #e7ecff;
+  --cb-text-muted: #a3afce;
+  --cb-border: rgba(255, 255, 255, 0.14);
+  --cb-border-soft: rgba(255, 255, 255, 0.08);
+  --cb-cyan: #18e0ff;
+  --cb-magenta: #ff3bff;
+  --cb-radius-md: 14px;
+  --cb-radius-lg: 18px;
+  --cb-shadow-strong: 0 24px 60px rgba(0, 0, 0, 0.8);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #050814;
+  color: var(--cb-text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
 
 /* Page Shell */
 .cbw {
@@ -85,6 +113,7 @@
   opacity: 0.78;
   padding: 6px 8px;
   border-radius: 8px;
+  text-decoration: none;
 }
 
 .cbw-nav a:hover {
@@ -109,7 +138,9 @@
   font-weight: 700;
   border: 1px solid transparent;
   white-space: nowrap;
-  transition: transform 120ms ease, opacity 120ms ease, border-color 120ms ease;
+  transition: transform 120ms ease, opacity 120ms ease, border-color 120ms ease,
+    box-shadow 120ms ease;
+  text-decoration: none;
 }
 
 .cbw-btn:hover {
@@ -209,7 +240,7 @@
   font-weight: 700;
 }
 
-/* Visual Panel */
+/* Hero Visual Panel */
 .cbw-visual-panel {
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
@@ -248,102 +279,63 @@
   gap: 10px;
 }
 
-/* Hero-Video Container */
-.cbw-visual-large {
-  position: relative;
-  height: 190px;
-  border-radius: 18px;
+/* Hero Video */
+.cbw-visual-video {
+  border-radius: 10px;
   overflow: hidden;
   border: 1px solid var(--cb-border-soft);
-  background: #05060b;
-  box-shadow: var(--cb-shadow-strong);
+  background:
+    radial-gradient(800px 400px at 10% 0%, rgba(35, 214, 255, 0.18), transparent 60%),
+    radial-gradient(900px 500px at 90% 100%, rgba(177, 0, 255, 0.18), transparent 60%);
 }
 
-.cbw-visual-video {
+.cbw-visual-video video {
   width: 100%;
-  height: 100%;
-  display: block;
+  height: 170px;
   object-fit: cover;
+  display: block;
 }
 
-/* Drei Mini-Karten unter dem Video */
-.cbw-visual-row {
+/* Hero Mini Cards */
+.cbw-hero-mini-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
 
-.cbw-visual-mini {
+.cbw-hero-mini-card {
   display: flex;
   align-items: center;
   gap: 8px;
-  min-height: 64px;
+  padding: 8px 9px;
   border-radius: 10px;
+  background: rgba(5, 6, 11, 0.95);
   border: 1px solid var(--cb-border-soft);
-  background: rgba(10, 12, 20, 0.9);
-  padding: 8px 10px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
 }
 
-/* Thumbnails (Bilder) */
-.cbw-mini-thumb {
-  width: 38px;
-  height: 38px;
+.cbw-hero-mini-card img {
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  object-fit: cover;
   flex-shrink: 0;
-  border: 1px solid var(--cb-border-soft);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
 }
 
-/* Bildpfade für die drei Mini-Karten */
-.cbw-mini-thumb-tiktok {
-  background-image: url("/mini-tiktok.png");
+.cbw-hero-mini-card h3 {
+  font-size: 11.5px;
+  margin: 0 0 2px 0;
 }
 
-.cbw-mini-thumb-live {
-  background-image: url("/mini-live.png");
-}
-
-.cbw-mini-thumb-overlays {
-  background-image: url("/mini-overlays.png");
-}
-
-.cbw-mini-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.cbw-mini-label {
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.cbw-mini-meta {
+.cbw-hero-mini-card p {
   font-size: 10px;
-  opacity: 0.8;
+  margin: 0;
+  color: var(--cb-text-muted);
 }
 
-.cbw-visual-lines {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-.cbw-visual-lines > div {
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid var(--cb-border-soft);
-}
-
-.cbw-hint {
+.cbw-visual-caption {
   font-size: 10px;
-  opacity: 0.55;
-  padding-left: 4px;
+  opacity: 0.65;
+  padding-left: 2px;
 }
 
 /* Trust Strip */
@@ -405,12 +397,7 @@
 }
 
 /* Grids */
-.cbw-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-}
-
+.cbw-grid,
 .cbw-grid-3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -461,20 +448,50 @@
   line-height: 1.45;
 }
 
-/* Screens */
-.cbw-screen {
-  height: 150px;
-  border-radius: 10px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+/* Screens (App-Screens Section) */
+.cbw-section-screens {
+  padding-top: 60px;
+}
+
+.cbw-screens-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.cbw-screen-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: var(--cb-radius-lg);
   border: 1px solid var(--cb-border-soft);
-  margin-bottom: 10px;
+  padding: 12px 12px 14px;
+}
+
+.cbw-screen-image-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--cb-border-soft);
+  background:
+    radial-gradient(800px 400px at 10% 0%, rgba(35, 214, 255, 0.16), transparent 60%),
+    radial-gradient(900px 500px at 90% 100%, rgba(177, 0, 255, 0.18), transparent 60%);
+  margin-bottom: 8px;
+}
+
+.cbw-screen-image-wrap img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.cbw-screen-card h3 {
+  font-size: 12.5px;
+  margin: 4px 0 2px;
 }
 
 .cbw-screen-label {
-  font-size: 11.5px;
-  font-weight: 700;
-  opacity: 0.85;
+  font-size: 11px;
+  color: var(--cb-text-muted);
+  margin: 0;
 }
 
 /* FAQ */
@@ -526,6 +543,7 @@
   color: var(--cb-text);
   font-weight: 800;
   font-size: 12.5px;
+  text-decoration: none;
 }
 
 /* Footer */
@@ -552,6 +570,8 @@
 .cbw-footer-links a {
   font-size: 10.8px;
   opacity: 0.75;
+  color: var(--cb-text);
+  text-decoration: none;
 }
 
 /* Responsive */
@@ -575,5 +595,18 @@
   .cbw-cta {
     width: 100%;
     justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .cbw-hero-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cbw-screens-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cbw-visual-video video {
+    height: auto;
   }
 }

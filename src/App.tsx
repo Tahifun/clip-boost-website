@@ -91,6 +91,7 @@ export default function App() {
               </div>
             </div>
 
+            {/* VISUAL: Video im eingekreisten Bereich */}
             <div className="cbw-visual">
               <div className="cbw-visual-panel">
                 <div className="cbw-visual-head">
@@ -100,7 +101,6 @@ export default function App() {
                   <strong>Preview</strong>
                 </div>
 
-                {/* Hier läuft das Hero-Video im eingekreisten Bereich */}
                 <div className="cbw-visual-body">
                   <div className="cbw-visual-large">
                     <video
@@ -110,7 +110,10 @@ export default function App() {
                       loop
                       muted
                       playsInline
-                    />
+                      controls   // Debug: später entfernen, wenn alles läuft
+                    >
+                      Dein Browser unterstützt keine HTML5-Videos.
+                    </video>
                   </div>
                   <div className="cbw-visual-row">
                     <div />

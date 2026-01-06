@@ -71,37 +71,37 @@ const screenCards = [
     key: "dashboard",
     title: "CLiP-BOOsT Dashboard mit Kennzahlen und Schnellaktionen",
     label: "Dashboard",
-    image: "/screen-dashboard.png",
+    image: "/publicscreen-dashboard.png",
   },
   {
     key: "overlays",
     title: "AI Private Gallery mit KI-generierten Overlays",
     label: "Overlays",
-    image: "/screen-overlays.png",
+    image: "/publicscreen-overlays.png",
   },
   {
     key: "ai",
     title: "KI-Overlay-Generierung Panel",
     label: "AI-Generator",
-    image: "/screen-ai-generator.png",
+    image: "/publicscreen-ai-generator.png",
   },
   {
     key: "community",
     title: "Community-Overlays Übersicht",
     label: "Community",
-    image: "/screen-community.png",
+    image: "/publicscreen-community.png.png", // entspricht deinem aktuellen Dateinamen
   },
   {
     key: "live-dashboard",
     title: "Live Dashboard mit Status-Kacheln",
     label: "Live Dashboard",
-    image: "/screen-live-dashboard.png",
+    image: "/publicscreen-live-dashboard.png",
   },
   {
     key: "live-checklist",
     title: "Live-Checkliste mit Setup-Schritten",
     label: "Live-Checkliste",
-    image: "/screen-live-checklist.png",
+    image: "/publicscreen-live-checklist.png",
   },
 ];
 
@@ -205,7 +205,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Hero Visual mit Video + 3 Mini-Karten */}
+            {/* Hero Visual */}
             <div className="cbw-visual">
               <div className="cbw-visual-panel">
                 <div className="cbw-visual-head">

@@ -248,7 +248,7 @@
   gap: 10px;
 }
 
-/* WICHTIG: hier wird das Video sichtbar gemacht */
+/* Hero-Video Container */
 .cbw-visual-large {
   position: relative;
   height: 190px;
@@ -266,17 +266,65 @@
   object-fit: cover;
 }
 
+/* Drei Mini-Karten unter dem Video */
 .cbw-visual-row {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
 
-.cbw-visual-row > div {
-  height: 54px;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.05);
+.cbw-visual-mini {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 64px;
+  border-radius: 10px;
   border: 1px solid var(--cb-border-soft);
+  background: rgba(10, 12, 20, 0.9);
+  padding: 8px 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Thumbnails (Bilder) */
+.cbw-mini-thumb {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+  border: 1px solid var(--cb-border-soft);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.45);
+}
+
+/* Bildpfade für die drei Mini-Karten */
+.cbw-mini-thumb-tiktok {
+  background-image: url("/mini-tiktok.png");
+}
+
+.cbw-mini-thumb-live {
+  background-image: url("/mini-live.png");
+}
+
+.cbw-mini-thumb-overlays {
+  background-image: url("/mini-overlays.png");
+}
+
+.cbw-mini-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cbw-mini-label {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.cbw-mini-meta {
+  font-size: 10px;
+  opacity: 0.8;
 }
 
 .cbw-visual-lines {

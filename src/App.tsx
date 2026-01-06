@@ -1,15 +1,128 @@
-// src/App.tsx
 import "./App.css";
 
-/**
- * CLiP-BOOsT Website (Landing)
- * Zweck:
- * - Öffentlich erreichbare Produktseite für Review
- * - Kein Login-Zwang
- * - Keine Abhängigkeit von der eigentlichen App-Struktur
- *
- * Dieses Repo ist NUR die Website.
- */
+const heroMiniCards = [
+  {
+    key: "tiktok",
+    title: "TikTok-Verknüpfung",
+    text: "Account als Plattform für dein Livestream-Setup verbinden.",
+    image: "/mini-tiktok.png",
+  },
+  {
+    key: "live",
+    title: "Live-Dashboard",
+    text: "Status, Zuschauer, Events und Checklist im Blick behalten.",
+    image: "/mini-live.png",
+  },
+  {
+    key: "overlays",
+    title: "Overlays Library",
+    text: "Built-in Templates, AI-Overlays und Community-Setups.",
+    image: "/mini-overlays.png",
+  },
+];
+
+const featureCards = [
+  {
+    title: "Overlay-Management",
+    text: "Zentrale Verwaltung eigener und vorgefertigter Overlays mit strukturierten Workflows.",
+  },
+  {
+    title: "AI-Overlay-Generierung",
+    text: "Stilbasierte Erstellung neuer Designs mit Fokus auf Lesbarkeit und Stream-Kompatibilität.",
+  },
+  {
+    title: "Community & Templates",
+    text: "Entdecken, testen und iterieren – optional mit kuratierten Vorlagen und Community-Inhalten.",
+  },
+  {
+    title: "Livestream-Setup",
+    text: "Aufbau für Widgets/Integrationen und strukturierte Aktivierung im Livebetrieb.",
+  },
+  {
+    title: "Monetarisierung",
+    text: "Grundlage für Free/PRO/DayPass sowie Asset-Bundles und erweiterte Limits.",
+  },
+  {
+    title: "Compliance-ready",
+    text: "Saubere Trennung von Website und App zur Erfüllung von Plattform-Review-Anforderungen.",
+  },
+];
+
+const steps = [
+  {
+    n: "01",
+    title: "Account & Projekt",
+    text: "App-Zugang anlegen und dein Streaming-Profil initialisieren.",
+  },
+  {
+    n: "02",
+    title: "Overlays auswählen/erstellen",
+    text: "Templates nutzen oder neue Designs KI-gestützt erzeugen.",
+  },
+  {
+    n: "03",
+    title: "Im Stream einsetzen",
+    text: "Assets integrieren, testen und dein Setup iterativ optimieren.",
+  },
+];
+
+const screenCards = [
+  {
+    key: "dashboard",
+    title: "CLiP-BOOsT Dashboard mit Kennzahlen und Schnellaktionen",
+    label: "Dashboard",
+    image: "/screen-dashboard.png",
+  },
+  {
+    key: "overlays",
+    title: "AI Private Gallery mit KI-generierten Overlays",
+    label: "Overlays",
+    image: "/screen-overlays.png",
+  },
+  {
+    key: "ai",
+    title: "KI-Overlay-Generierung Panel",
+    label: "AI-Generator",
+    image: "/screen-ai-generator.png",
+  },
+  {
+    key: "community",
+    title: "Community-Overlays Übersicht",
+    label: "Community",
+    image: "/screen-community.png",
+  },
+  {
+    key: "live-dashboard",
+    title: "Live Dashboard mit Status-Kacheln",
+    label: "Live Dashboard",
+    image: "/screen-live-dashboard.png",
+  },
+  {
+    key: "live-checklist",
+    title: "Live-Checkliste mit Setup-Schritten",
+    label: "Live-Checkliste",
+    image: "/screen-live-checklist.png",
+  },
+];
+
+const faqs = [
+  {
+    q: "Ist diese Seite die Login-Seite?",
+    a: "Nein. Das ist eine öffentliche Informationsseite. Der Login zur App erfolgt nur über den Button und wird nicht erzwungen.",
+  },
+  {
+    q: "Wofür ist CLiP-BOOsT gedacht?",
+    a: "Für Streamer, die Overlays und Stream-Assets effizient verwalten, testen und KI-gestützt erstellen möchten.",
+  },
+  {
+    q: "Gibt es kostenlose Nutzung?",
+    a: "Ein Free-Einstieg ist vorgesehen. Erweiterte Funktionen können als PRO oder DayPass angeboten werden.",
+  },
+  {
+    q: "Welche Plattformen werden unterstützt?",
+    a: "Der Fokus liegt auf modernen Livestream-Workflows. Plattform-spezifische Integrationen können je nach Release-Stufe variieren.",
+  },
+];
 
 export default function App() {
   const year = new Date().getFullYear();
@@ -23,7 +136,7 @@ export default function App() {
             <span className="cbw-dot" />
             <div className="cbw-brand-text">
               <div className="cbw-brand-name">CLiP-BOOsT</div>
-              <div className="cbw-brand-sub">Stream Assets & Overlay Platform</div>
+              <div className="cbw-brand-sub">Stream Assets &amp; Overlay Platform</div>
             </div>
           </div>
 
@@ -92,7 +205,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Hero-Visual mit Video + 3 Mini-Karten */}
+            {/* Hero Visual mit Video + 3 Mini-Karten */}
             <div className="cbw-visual">
               <div className="cbw-visual-panel">
                 <div className="cbw-visual-head">
@@ -102,9 +215,8 @@ export default function App() {
                   <strong>Preview</strong>
                 </div>
                 <div className="cbw-visual-body">
-                  <div className="cbw-visual-large cbw-visual-large-video">
+                  <div className="cbw-visual-video">
                     <video
-                      className="cbw-visual-video"
                       src="/clip-boost-hero.mp4"
                       autoPlay
                       muted
@@ -113,46 +225,22 @@ export default function App() {
                     />
                   </div>
 
-                  <div className="cbw-mini-row">
-                    <div className="cbw-mini-card">
-                      <div className="cbw-mini-thumb cbw-mini-thumb-tiktok" />
-                      <div className="cbw-mini-text">
-                        <div className="cbw-mini-title">TikTok-Verknüpfung</div>
-                        <div className="cbw-mini-sub">
-                          Account als Plattform für dein Setup verbinden.
+                  <div className="cbw-hero-mini-grid">
+                    {heroMiniCards.map((card) => (
+                      <article className="cbw-hero-mini-card" key={card.key}>
+                        <img src={card.image} alt={card.title} />
+                        <div>
+                          <h3>{card.title}</h3>
+                          <p>{card.text}</p>
                         </div>
-                      </div>
-                    </div>
-
-                    <div className="cbw-mini-card">
-                      <div className="cbw-mini-thumb cbw-mini-thumb-live" />
-                      <div className="cbw-mini-text">
-                        <div className="cbw-mini-title">Live Dashboard</div>
-                        <div className="cbw-mini-sub">
-                          Status, Zuschauer, Events und Checkliste im Blick.
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="cbw-mini-card">
-                      <div className="cbw-mini-thumb cbw-mini-thumb-overlays" />
-                      <div className="cbw-mini-text">
-                        <div className="cbw-mini-title">Overlays Library</div>
-                        <div className="cbw-mini-sub">
-                          Built-in Templates, AI-Overlays und Community-Setups.
-                        </div>
-                      </div>
-                    </div>
+                      </article>
+                    ))}
                   </div>
 
-                  <div className="cbw-visual-lines">
-                    <div />
-                    <div />
-                  </div>
+                  <p className="cbw-visual-caption">
+                    Live-Mitschnitt aus CLiP-BOOsT – das Video zeigt einen Beispiel-Stream.
+                  </p>
                 </div>
-              </div>
-              <div className="cbw-hint">
-                Live-Mitschnitt aus CLiP-BOOsT – das Video zeigt einen Beispiel-Stream.
               </div>
             </div>
           </div>
@@ -177,54 +265,18 @@ export default function App() {
             <div className="cbw-section-head">
               <h2>Kernfunktionen</h2>
               <p>
-                Fokus auf skalierbare Stream-Assets, konsistente Designs und eine
-                klare Nutzerführung.
+                Fokus auf skalierbare Stream-Assets, konsistente Designs und eine klare
+                Nutzerführung.
               </p>
             </div>
 
             <div className="cbw-grid">
-              <div className="cbw-card">
-                <h3>Overlay-Management</h3>
-                <p>
-                  Zentrale Verwaltung eigener und vorgefertigter Overlays mit
-                  strukturierten Workflows.
-                </p>
-              </div>
-              <div className="cbw-card">
-                <h3>AI-Overlay-Generierung</h3>
-                <p>
-                  Stilbasierte Erstellung neuer Designs mit Fokus auf Lesbarkeit
-                  und Stream-Kompatibilität.
-                </p>
-              </div>
-              <div className="cbw-card">
-                <h3>Community & Templates</h3>
-                <p>
-                  Entdecken, testen und iterieren – optional mit kuratierten
-                  Vorlagen und Community-Inhalten.
-                </p>
-              </div>
-              <div className="cbw-card">
-                <h3>Livestream-Setup</h3>
-                <p>
-                  Aufbau für Widgets/Integrationen und strukturierte Aktivierung
-                  im Livebetrieb.
-                </p>
-              </div>
-              <div className="cbw-card">
-                <h3>Monetarisierung</h3>
-                <p>
-                  Grundlage für Free/PRO/DayPass sowie Asset-Bundles und
-                  erweiterte Limits.
-                </p>
-              </div>
-              <div className="cbw-card">
-                <h3>Compliance-ready</h3>
-                <p>
-                  Saubere Trennung von Website und App zur Erfüllung von
-                  Plattform-Review-Anforderungen.
-                </p>
-              </div>
+              {featureCards.map((card) => (
+                <article key={card.title} className="cbw-card">
+                  <h3>{card.title}</h3>
+                  <p>{card.text}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -238,21 +290,13 @@ export default function App() {
             </div>
 
             <div className="cbw-grid-3">
-              <div className="cbw-card">
-                <span className="cbw-step">01</span>
-                <h3>Account & Projekt</h3>
-                <p>App-Zugang anlegen und das Streaming-Profil initialisieren.</p>
-              </div>
-              <div className="cbw-card">
-                <span className="cbw-step">02</span>
-                <h3>Overlays auswählen/erstellen</h3>
-                <p>Templates nutzen oder neue Designs KI-gestützt erzeugen.</p>
-              </div>
-              <div className="cbw-card">
-                <span className="cbw-step">03</span>
-                <h3>Im Stream einsetzen</h3>
-                <p>Assets integrieren, testen und das Setup iterativ optimieren.</p>
-              </div>
+              {steps.map((s) => (
+                <article key={s.n} className="cbw-card">
+                  <span className="cbw-step">{s.n}</span>
+                  <h3>{s.title}</h3>
+                  <p>{s.text}</p>
+                </article>
+              ))}
             </div>
 
             <div className="cbw-note">
@@ -262,77 +306,27 @@ export default function App() {
           </div>
         </section>
 
-        {/* App Screens mit echten Screenshots */}
-        <section id="screens" className="cbw-section">
+        {/* App Screens */}
+        <section id="screens" className="cbw-section cbw-section-screens">
           <div className="cbw-container">
             <div className="cbw-section-head">
               <h2>App-Screens</h2>
               <p>
-                Einblicke in zentrale Bereiche der App: Dashboard, Overlays,
-                AI-Generator, Community und Livestream-Steuerung.
+                Einblicke in zentrale Bereiche der App: Dashboard, Overlays, AI-Generator,
+                Community und Livestream-Steuerung.
               </p>
             </div>
 
-            <div className="cbw-grid">
-              <div className="cbw-card cbw-screen-card">
-                <img
-                  src="/screen-dashboard.png"
-                  className="cbw-screen-img"
-                  alt="CLiP-BOOsT Dashboard mit Kennzahlen und Schnellaktionen"
-                  loading="lazy"
-                />
-                <div className="cbw-screen-label">Dashboard</div>
-              </div>
-
-              <div className="cbw-card cbw-screen-card">
-                <img
-                  src="/screen-overlays.png"
-                  className="cbw-screen-img"
-                  alt="AI Private Gallery mit KI-generierten Overlays"
-                  loading="lazy"
-                />
-                <div className="cbw-screen-label">Overlays</div>
-              </div>
-
-              <div className="cbw-card cbw-screen-card">
-                <img
-                  src="/screen-ai-generator.png"
-                  className="cbw-screen-img"
-                  alt="KI-Overlay-Generierung Panel"
-                  loading="lazy"
-                />
-                <div className="cbw-screen-label">AI-Generator</div>
-              </div>
-
-              <div className="cbw-card cbw-screen-card">
-                <img
-                  src="/screen-community.png"
-                  className="cbw-screen-img"
-                  alt="Community-Overlays Übersicht"
-                  loading="lazy"
-                />
-                <div className="cbw-screen-label">Community</div>
-              </div>
-
-              <div className="cbw-card cbw-screen-card">
-                <img
-                  src="/screen-live-dashboard.png"
-                  className="cbw-screen-img"
-                  alt="Live Dashboard mit Status-Kacheln"
-                  loading="lazy"
-                />
-                <div className="cbw-screen-label">Live Dashboard</div>
-              </div>
-
-              <div className="cbw-card cbw-screen-card">
-                <img
-                  src="/screen-live-checklist.png"
-                  className="cbw-screen-img"
-                  alt="Live-Checkliste mit Setup-Schritten"
-                  loading="lazy"
-                />
-                <div className="cbw-screen-label">Live-Checkliste</div>
-              </div>
+            <div className="cbw-screens-grid">
+              {screenCards.map((screen) => (
+                <article key={screen.key} className="cbw-screen-card">
+                  <div className="cbw-screen-image-wrap">
+                    <img src={screen.image} alt={screen.title} />
+                  </div>
+                  <h3>{screen.title}</h3>
+                  <p className="cbw-screen-label">{screen.label}</p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -346,27 +340,12 @@ export default function App() {
             </div>
 
             <div className="cbw-faq">
-              <details className="cbw-faq-item">
-                <summary>Ist diese Seite die Login-Seite?</summary>
-                <p>
-                  Nein. Das ist eine öffentliche Informationsseite. Der Login zur
-                  App erfolgt nur über den Button und wird nicht erzwungen.
-                </p>
-              </details>
-              <details className="cbw-faq-item">
-                <summary>Wofür ist CLiP-BOOsT gedacht?</summary>
-                <p>
-                  Für Streamer, die Overlays und Stream-Assets effizient verwalten,
-                  testen und KI-gestützt erstellen möchten.
-                </p>
-              </details>
-              <details className="cbw-faq-item">
-                <summary>Gibt es kostenlose Nutzung?</summary>
-                <p>
-                  Ein Free-Einstieg ist vorgesehen. Erweiterte Funktionen können
-                  als PRO oder DayPass angeboten werden.
-                </p>
-              </details>
+              {faqs.map((item) => (
+                <details key={item.q} className="cbw-faq-item">
+                  <summary>{item.q}</summary>
+                  <p>{item.a}</p>
+                </details>
+              ))}
             </div>
           </div>
         </section>

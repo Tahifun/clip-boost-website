@@ -7,7 +7,7 @@
   background:
     radial-gradient(1200px 600px at 12% 8%, rgba(35, 214, 255, 0.14), transparent 60%),
     radial-gradient(1100px 700px at 88% 18%, rgba(177, 0, 255, 0.16), transparent 60%),
-    radial-gradient(900px 900px at 50% 80%, rgba(139, 0, 255, 0.10), transparent 65%),
+    radial-gradient(900px 900px at 50% 80%, rgba(139, 0, 255, 0.1), transparent 65%),
     linear-gradient(180deg, var(--cb-bg-1) 0%, var(--cb-bg-0) 45%, var(--cb-bg-2) 100%);
   color: var(--cb-text);
 }
@@ -248,12 +248,22 @@
   gap: 10px;
 }
 
+/* WICHTIG: hier wird das Video sichtbar gemacht */
 .cbw-visual-large {
-  height: 150px;
-  border-radius: 10px;
-  background:
-    linear-gradient(135deg, rgba(35, 214, 255, 0.16), rgba(177, 0, 255, 0.14));
+  position: relative;
+  height: 190px;
+  border-radius: 18px;
+  overflow: hidden;
   border: 1px solid var(--cb-border-soft);
+  background: #05060b;
+  box-shadow: var(--cb-shadow-strong);
+}
+
+.cbw-visual-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .cbw-visual-row {
@@ -395,7 +405,7 @@
 .cbw-note {
   margin-top: 18px;
   background:
-    linear-gradient(135deg, rgba(35, 214, 255, 0.10), rgba(177, 0, 255, 0.10));
+    linear-gradient(135deg, rgba(35, 214, 255, 0.1), rgba(177, 0, 255, 0.1));
   border: 1px solid rgba(35, 214, 255, 0.22);
   border-radius: var(--cb-radius-md);
   padding: 12px;

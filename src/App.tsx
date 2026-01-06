@@ -16,6 +16,7 @@ export default function App() {
 
   return (
     <div className="cbw">
+      {/* Header */}
       <header className="cbw-header">
         <div className="cbw-container cbw-header-row">
           <div className="cbw-brand">
@@ -50,7 +51,7 @@ export default function App() {
       </header>
 
       <main>
-        {/* HERO ---------------------------------------------------------------- */}
+        {/* Hero */}
         <section className="cbw-hero">
           <div className="cbw-container cbw-hero-grid">
             <div>
@@ -91,7 +92,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* VISUAL: Video + 3 Mini-Karten */}
+            {/* Hero-Visual mit Video + 3 Mini-Karten */}
             <div className="cbw-visual">
               <div className="cbw-visual-panel">
                 <div className="cbw-visual-head">
@@ -100,51 +101,46 @@ export default function App() {
                   <span />
                   <strong>Preview</strong>
                 </div>
-
                 <div className="cbw-visual-body">
-                  {/* Hero-Video */}
-                  <div className="cbw-visual-large">
+                  <div className="cbw-visual-large cbw-visual-large-video">
                     <video
                       className="cbw-visual-video"
                       src="/clip-boost-hero.mp4"
                       autoPlay
-                      loop
                       muted
+                      loop
                       playsInline
-                    >
-                      Dein Browser unterstützt keine HTML5-Videos.
-                    </video>
+                    />
                   </div>
 
-                  {/* Drei Feature-Karten (TikTok, Live, Overlays) */}
-                  <div className="cbw-visual-row">
-                    <div className="cbw-visual-mini cbw-visual-mini-tiktok">
+                  <div className="cbw-mini-row">
+                    <div className="cbw-mini-card">
                       <div className="cbw-mini-thumb cbw-mini-thumb-tiktok" />
                       <div className="cbw-mini-text">
-                        <span className="cbw-mini-label">TikTok-Verknüpfung</span>
-                        <span className="cbw-mini-meta">
-                          TikTok-Account koppeln, Profilname & Avatar in CLiP-BOOsT anzeigen.
-                        </span>
+                        <div className="cbw-mini-title">TikTok-Verknüpfung</div>
+                        <div className="cbw-mini-sub">
+                          Account als Plattform für dein Setup verbinden.
+                        </div>
                       </div>
                     </div>
 
-                    <div className="cbw-visual-mini cbw-visual-mini-live">
+                    <div className="cbw-mini-card">
                       <div className="cbw-mini-thumb cbw-mini-thumb-live" />
                       <div className="cbw-mini-text">
-                        <span className="cbw-mini-label">Live Control Center</span>
-                        <span className="cbw-mini-meta">
-                          Live-Dashboard mit Scenes, Status, Recording, Alerts & Chat.
-                        </span>
+                        <div className="cbw-mini-title">Live Dashboard</div>
+                        <div className="cbw-mini-sub">
+                          Status, Zuschauer, Events und Checkliste im Blick.
+                        </div>
                       </div>
                     </div>
 
-                    <div className="cbw-visual-mini cbw-visual-mini-overlays">
+                    <div className="cbw-mini-card">
                       <div className="cbw-mini-thumb cbw-mini-thumb-overlays" />
                       <div className="cbw-mini-text">
-                        <span className="cbw-mini-label">Overlays Library</span>
-                        <span className="cbw-mini-meta">
-                          Built-in Templates, Community-Overlays und KI-generierte Layouts.
-                        </span>
+                        <div className="cbw-mini-title">Overlays Library</div>
+                        <div className="cbw-mini-sub">
+                          Built-in Templates, AI-Overlays und Community-Setups.
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -162,7 +158,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* STRIP -------------------------------------------------------------- */}
+        {/* Trust Strip */}
         <section className="cbw-strip">
           <div className="cbw-container cbw-strip-row">
             <span>Öffentlich erreichbar</span>
@@ -175,7 +171,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* FEATURES ----------------------------------------------------------- */}
+        {/* Features */}
         <section id="features" className="cbw-section">
           <div className="cbw-container">
             <div className="cbw-section-head">
@@ -233,7 +229,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* HOW IT WORKS ------------------------------------------------------ */}
+        {/* How it works */}
         <section id="how" className="cbw-section cbw-section-alt">
           <div className="cbw-container">
             <div className="cbw-section-head">
@@ -266,36 +262,82 @@ export default function App() {
           </div>
         </section>
 
-        {/* SCREENS ----------------------------------------------------------- */}
+        {/* App Screens mit echten Screenshots */}
         <section id="screens" className="cbw-section">
           <div className="cbw-container">
             <div className="cbw-section-head">
               <h2>App-Screens</h2>
               <p>
-                Platzhalter für Screenshots (Dashboard, Overlays, AI-Generator,
-                Community, Livestream-Setup).
+                Einblicke in zentrale Bereiche der App: Dashboard, Overlays,
+                AI-Generator, Community und Livestream-Steuerung.
               </p>
             </div>
 
             <div className="cbw-grid">
-              {[
-                "Dashboard",
-                "Overlays",
-                "AI Generator",
-                "Community",
-                "Livestream Setup",
-                "Account/Billing",
-              ].map((x) => (
-                <div className="cbw-card" key={x}>
-                  <div className="cbw-screen" />
-                  <div className="cbw-screen-label">{x}</div>
-                </div>
-              ))}
+              <div className="cbw-card cbw-screen-card">
+                <img
+                  src="/screen-dashboard.png"
+                  className="cbw-screen-img"
+                  alt="CLiP-BOOsT Dashboard mit Kennzahlen und Schnellaktionen"
+                  loading="lazy"
+                />
+                <div className="cbw-screen-label">Dashboard</div>
+              </div>
+
+              <div className="cbw-card cbw-screen-card">
+                <img
+                  src="/screen-overlays.png"
+                  className="cbw-screen-img"
+                  alt="AI Private Gallery mit KI-generierten Overlays"
+                  loading="lazy"
+                />
+                <div className="cbw-screen-label">Overlays</div>
+              </div>
+
+              <div className="cbw-card cbw-screen-card">
+                <img
+                  src="/screen-ai-generator.png"
+                  className="cbw-screen-img"
+                  alt="KI-Overlay-Generierung Panel"
+                  loading="lazy"
+                />
+                <div className="cbw-screen-label">AI-Generator</div>
+              </div>
+
+              <div className="cbw-card cbw-screen-card">
+                <img
+                  src="/screen-community.png"
+                  className="cbw-screen-img"
+                  alt="Community-Overlays Übersicht"
+                  loading="lazy"
+                />
+                <div className="cbw-screen-label">Community</div>
+              </div>
+
+              <div className="cbw-card cbw-screen-card">
+                <img
+                  src="/screen-live-dashboard.png"
+                  className="cbw-screen-img"
+                  alt="Live Dashboard mit Status-Kacheln"
+                  loading="lazy"
+                />
+                <div className="cbw-screen-label">Live Dashboard</div>
+              </div>
+
+              <div className="cbw-card cbw-screen-card">
+                <img
+                  src="/screen-live-checklist.png"
+                  className="cbw-screen-img"
+                  alt="Live-Checkliste mit Setup-Schritten"
+                  loading="lazy"
+                />
+                <div className="cbw-screen-label">Live-Checkliste</div>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* FAQ ---------------------------------------------------------------- */}
+        {/* FAQ */}
         <section id="faq" className="cbw-section">
           <div className="cbw-container">
             <div className="cbw-section-head">
@@ -329,7 +371,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* CONTACT ----------------------------------------------------------- */}
+        {/* Kontakt */}
         <section id="contact" className="cbw-section cbw-section-alt">
           <div className="cbw-container">
             <div className="cbw-contact">
@@ -352,7 +394,7 @@ export default function App() {
         </section>
       </main>
 
-      {/* FOOTER -------------------------------------------------------------- */}
+      {/* Footer */}
       <footer className="cbw-footer">
         <div className="cbw-container cbw-footer-row">
           <div>

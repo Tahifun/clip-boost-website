@@ -50,6 +50,7 @@ export default function App() {
       </header>
 
       <main>
+        {/* HERO ---------------------------------------------------------------- */}
         <section className="cbw-hero">
           <div className="cbw-container cbw-hero-grid">
             <div>
@@ -98,8 +99,19 @@ export default function App() {
                   <span />
                   <strong>Preview</strong>
                 </div>
+
+                {/* Hier läuft das Hero-Video im eingekreisten Bereich */}
                 <div className="cbw-visual-body">
-                  <div className="cbw-visual-large" />
+                  <div className="cbw-visual-large">
+                    <video
+                      className="cbw-visual-video"
+                      src="/clip-boost-hero.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    />
+                  </div>
                   <div className="cbw-visual-row">
                     <div />
                     <div />
@@ -112,12 +124,13 @@ export default function App() {
                 </div>
               </div>
               <div className="cbw-hint">
-                Platzhalter-Visual – später durch echte Screenshots ersetzen.
+                Live-Mitschnitt aus CLiP-BOOsT – das Video zeigt einen Beispiel-Stream.
               </div>
             </div>
           </div>
         </section>
 
+        {/* STRIP -------------------------------------------------------------- */}
         <section className="cbw-strip">
           <div className="cbw-container cbw-strip-row">
             <span>Öffentlich erreichbar</span>
@@ -130,6 +143,7 @@ export default function App() {
           </div>
         </section>
 
+        {/* FEATURES ----------------------------------------------------------- */}
         <section id="features" className="cbw-section">
           <div className="cbw-container">
             <div className="cbw-section-head">
@@ -187,6 +201,7 @@ export default function App() {
           </div>
         </section>
 
+        {/* HOW IT WORKS ------------------------------------------------------ */}
         <section id="how" className="cbw-section cbw-section-alt">
           <div className="cbw-container">
             <div className="cbw-section-head">
@@ -219,6 +234,7 @@ export default function App() {
           </div>
         </section>
 
+        {/* SCREENS ----------------------------------------------------------- */}
         <section id="screens" className="cbw-section">
           <div className="cbw-container">
             <div className="cbw-section-head">
@@ -247,6 +263,7 @@ export default function App() {
           </div>
         </section>
 
+        {/* FAQ ---------------------------------------------------------------- */}
         <section id="faq" className="cbw-section">
           <div className="cbw-container">
             <div className="cbw-section-head">
@@ -280,6 +297,7 @@ export default function App() {
           </div>
         </section>
 
+        {/* CONTACT ----------------------------------------------------------- */}
         <section id="contact" className="cbw-section cbw-section-alt">
           <div className="cbw-container">
             <div className="cbw-contact">
@@ -302,6 +320,7 @@ export default function App() {
         </section>
       </main>
 
+      {/* FOOTER -------------------------------------------------------------- */}
       <footer className="cbw-footer">
         <div className="cbw-container cbw-footer-row">
           <div>

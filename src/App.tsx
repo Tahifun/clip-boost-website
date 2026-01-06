@@ -91,7 +91,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* VISUAL: Video im eingekreisten Bereich */}
+            {/* VISUAL: Video + 3 Mini-Karten */}
             <div className="cbw-visual">
               <div className="cbw-visual-panel">
                 <div className="cbw-visual-head">
@@ -102,6 +102,7 @@ export default function App() {
                 </div>
 
                 <div className="cbw-visual-body">
+                  {/* Hero-Video */}
                   <div className="cbw-visual-large">
                     <video
                       className="cbw-visual-video"
@@ -110,16 +111,44 @@ export default function App() {
                       loop
                       muted
                       playsInline
-                      controls   // Debug: später entfernen, wenn alles läuft
                     >
                       Dein Browser unterstützt keine HTML5-Videos.
                     </video>
                   </div>
+
+                  {/* Drei Feature-Karten (TikTok, Live, Overlays) */}
                   <div className="cbw-visual-row">
-                    <div />
-                    <div />
-                    <div />
+                    <div className="cbw-visual-mini cbw-visual-mini-tiktok">
+                      <div className="cbw-mini-thumb cbw-mini-thumb-tiktok" />
+                      <div className="cbw-mini-text">
+                        <span className="cbw-mini-label">TikTok-Verknüpfung</span>
+                        <span className="cbw-mini-meta">
+                          TikTok-Account koppeln, Profilname & Avatar in CLiP-BOOsT anzeigen.
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="cbw-visual-mini cbw-visual-mini-live">
+                      <div className="cbw-mini-thumb cbw-mini-thumb-live" />
+                      <div className="cbw-mini-text">
+                        <span className="cbw-mini-label">Live Control Center</span>
+                        <span className="cbw-mini-meta">
+                          Live-Dashboard mit Scenes, Status, Recording, Alerts & Chat.
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="cbw-visual-mini cbw-visual-mini-overlays">
+                      <div className="cbw-mini-thumb cbw-mini-thumb-overlays" />
+                      <div className="cbw-mini-text">
+                        <span className="cbw-mini-label">Overlays Library</span>
+                        <span className="cbw-mini-meta">
+                          Built-in Templates, Community-Overlays und KI-generierte Layouts.
+                        </span>
+                      </div>
+                    </div>
                   </div>
+
                   <div className="cbw-visual-lines">
                     <div />
                     <div />

@@ -12,6 +12,18 @@
   --cb-radius-md: 14px;
   --cb-radius-lg: 18px;
   --cb-shadow-strong: 0 24px 60px rgba(0, 0, 0, 0.8);
+
+  /* Lila Touch (Card/Box Look) */
+  --cb-violet-a: rgba(177, 0, 255, 0.18);
+  --cb-violet-b: rgba(110, 0, 255, 0.10);
+
+  /* lila Card-Touch wie dein Screenshot */
+  --cb-card-bg: linear-gradient(
+    135deg,
+    rgba(25, 28, 40, 0.78) 0%,
+    rgba(18, 20, 32, 0.68) 38%,
+    rgba(80, 0, 140, 0.22) 100%
+  );
 }
 
 *,
@@ -233,7 +245,7 @@ body {
 }
 
 .cbw-meta-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--cb-card-bg);
   border: 1px solid var(--cb-border-soft);
   border-radius: var(--cb-radius-md);
   padding: 12px;
@@ -418,7 +430,7 @@ body {
 
 /* Cards */
 .cbw-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--cb-card-bg);
   border: 1px solid var(--cb-border-soft);
   border-radius: var(--cb-radius-lg);
   padding: 18px 16px;
@@ -472,7 +484,7 @@ body {
 }
 
 .cbw-screen-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--cb-card-bg);
   border-radius: var(--cb-radius-lg);
   border: 1px solid var(--cb-border-soft);
   padding: 12px 12px 14px;
@@ -513,7 +525,7 @@ body {
 }
 
 .cbw-faq-item {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--cb-card-bg);
   border: 1px solid var(--cb-border-soft);
   border-radius: var(--cb-radius-md);
   padding: 10px 12px;
@@ -545,7 +557,7 @@ body {
 }
 
 .cbw-contact-box {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--cb-card-bg);
   border: 1px solid var(--cb-border-soft);
   border-radius: var(--cb-radius-lg);
   padding: 16px;
@@ -584,6 +596,18 @@ body {
   opacity: 0.75;
   color: var(--cb-text);
   text-decoration: none;
+}
+
+/* Optional: stärkerer lila Glow bei Hover */
+.cbw-card:hover,
+.cbw-meta-card:hover,
+.cbw-screen-card:hover,
+.cbw-faq-item:hover,
+.cbw-contact-box:hover {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.06),
+    0 18px 50px rgba(0, 0, 0, 0.55),
+    0 0 28px rgba(177, 0, 255, 0.18);
 }
 
 /* Responsive */

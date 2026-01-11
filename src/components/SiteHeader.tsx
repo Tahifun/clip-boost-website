@@ -5,7 +5,7 @@ export default function SiteHeader() {
         <a className="cbw-brand" href="#top" aria-label="CLiP-BOOsT">
           <img
             className="cbw-mark"
-            src="/clipboost-logo.png"
+            src="/clipboost-mark.png"
             alt="CLiP-BOOsT Logo"
             width={22}
             height={22}

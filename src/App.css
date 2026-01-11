@@ -73,6 +73,7 @@ body {
   gap: 12px;
 }
 
+/* Legacy dot (should no longer be used, but kept safe) */
 .cbw-dot {
   width: 10px;
   height: 10px;
@@ -82,6 +83,32 @@ body {
     0 0 12px rgba(35, 214, 255, 0.45),
     0 0 18px rgba(177, 0, 255, 0.35);
   display: inline-block;
+}
+
+/* ✅ Brand logo image (public/clipboost-mark.png) */
+.cbw-mark {
+  width: 28px;               /* kleines bisschen größer */
+  height: 28px;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  flex: 0 0 auto;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 12px 34px rgba(0, 0, 0, 0.45);
+}
+
+/* Footer variant: minimal größer */
+.cbw-mark--footer {
+  width: 34px;
+  height: 34px;
+}
+
+/* Sicherheitsnetz: verhindert riesige Logos durch fehlende Klasse */
+.cbw-header .cbw-brand img,
+.cbw-footer .cbw-brand img {
+  max-width: 40px;
+  max-height: 40px;
 }
 
 .cbw-brand-text {
@@ -642,7 +669,6 @@ body {
   }
 }
 
-
 /* ----------------------------- Legal Pages ----------------------------- */
 .cbw-legal {
   padding: 56px 0;
@@ -698,4 +724,3 @@ body {
   font-size: 11px;
   opacity: 0.65;
 }
-

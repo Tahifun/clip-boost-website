@@ -14,6 +14,7 @@ export default function SiteHeader() {
           <a href="/#features">Features</a>
           <a href="/#how">Ablauf</a>
           <a href="/#screens">Screens</a>
+          <a href="/#tiktok">TikTok</a>
           <a href="/#faq">FAQ</a>
           <a href="/#contact">Kontakt</a>
         </nav>
@@ -22,7 +23,12 @@ export default function SiteHeader() {
           <a className="cbw-btn cbw-btn-ghost" href="/#contact">
             Kontakt
           </a>
-          <a className="cbw-btn cbw-btn-primary" href="https://www.clip-boost.online">
+          <a
+            className="cbw-btn cbw-btn-primary"
+            href="https://www.clip-boost.online"
+            target="_blank"
+            rel="noreferrer"
+          >
             Zur App / Login
           </a>
         </div>

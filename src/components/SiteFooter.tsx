@@ -19,7 +19,12 @@ export default function SiteFooter() {
             <a href="/terms">Terms</a>
           </div>
 
-          <a className="cbw-btn cbw-btn-primary" href="https://www.clip-boost.online">
+          <a
+            className="cbw-btn cbw-btn-primary"
+            href="https://www.clip-boost.online"
+            target="_blank"
+            rel="noreferrer"
+          >
             Zur App / Login
           </a>
         </div>

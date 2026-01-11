@@ -53,7 +53,7 @@ const heroMiniCards: HeroMiniCard[] = [
     key: "overlays",
     title: "Overlays Library",
     text: "Built-in Templates, AI und Community-Setups.",
-    image: "/mini-overlay.png",
+    image: "/mini-overlays.png",
   },
 ];
 
@@ -80,7 +80,7 @@ const featureCards: FeatureCard[] = [
   },
   {
     title: "Compliance-ready",
-    text: "Saubere Trennung von Website und App zur Erfüllung von Plattform-Review-Anforderungen.",
+    text: "Öffentliche Produktseite (Infos & rechtliche Hinweise); Login ist separat in der App.",
   },
 ];
 
@@ -107,37 +107,37 @@ const screenCards: ScreenCard[] = [
     key: "screen-dashboard",
     title: "Dashboard",
     label: "Überblick, Status und Kernfunktionen.",
-    image: "/screen-dashboard.png",
-  },
-  {
-    key: "screen-live",
-    title: "Livestream",
-    label: "Live-Steuerung, Szenen und Monitoring.",
-    image: "/screen-live.png",
-  },
-  {
-    key: "screen-bot",
-    title: "Bot & Moderation",
-    label: "Commands, Auto-Moderation und KI-Tests.",
-    image: "/screen-bot.png",
+    image: "/publicscreen-dashboard.png",
   },
   {
     key: "screen-overlays",
     title: "Overlays",
     label: "Templates, Library und Setup-Zuweisung.",
-    image: "/screen-overlays.png",
+    image: "/publicscreen-overlays.png",
   },
   {
-    key: "screen-media",
-    title: "Media Center",
-    label: "Uploads, Verwaltung und Assets für den Stream.",
-    image: "/screen-media.png",
+    key: "screen-ai",
+    title: "AI Generator",
+    label: "KI-gestützte Erstellung neuer Assets.",
+    image: "/publicscreen-ai-generator.png",
   },
   {
-    key: "screen-analytics",
-    title: "Analytics",
-    label: "Auswertung, KPIs und Performance-Signale.",
-    image: "/screen-analytics.png",
+    key: "screen-community",
+    title: "Community",
+    label: "Discover, Community-Packs und Imports.",
+    image: "/publicscreen-community.png",
+  },
+  {
+    key: "screen-live-dashboard",
+    title: "Live Dashboard",
+    label: "Live-Steuerung, Szenen und Monitoring.",
+    image: "/publicscreen-live-dashboard.png",
+  },
+  {
+    key: "screen-live-checklist",
+    title: "Live Checklist",
+    label: "Setup-Checkliste vor dem Start.",
+    image: "/publicscreen-live-checklist.png",
   },
 ];
 
@@ -157,6 +157,14 @@ const faqs: FaqItem[] = [
   {
     q: "Welche Plattformen werden unterstützt?",
     a: "Der Fokus liegt auf Livestream-Workflows. Plattform-Integrationen werden innerhalb der App verwaltet (nicht auf dieser Website).",
+  },
+  {
+    q: "Welche TikTok-Daten werden verwendet?",
+    a: "Bei TikTok Login wird aktuell nur der Scope user.info.basic genutzt. Gespeichert werden OpenID sowie Anzeigename und Avatar zur Account-Zuordnung. Posting/Publishing erfolgt nicht über diese Integration.",
+  },
+  {
+    q: "Wie kann ein Reviewer die App testen?",
+    a: "Falls für den Review Zugriff auf die App notwendig ist, kann ein Test-Account bereitgestellt werden (Zugangsdaten in den Review-Notizen im Developer Portal).",
   },
 ];
 
@@ -322,6 +330,46 @@ export default function Home() {
           </div>
         </section>
 
+        {/* TikTok Integration */}
+        <section id="tiktok" className="cbw-section cbw-section-alt">
+          <div className="cbw-container">
+            <div className="cbw-section-head">
+              <h2>TikTok Login &amp; Integration</h2>
+              <p>
+                CLiP-BOOsT verknüpft optional einen TikTok-Account über OAuth (PKCE). Die Website selbst ist öffentlich
+                und enthält keine Login-Barrieren.
+              </p>
+            </div>
+
+            <div className="cbw-grid-3">
+              <article className="cbw-card">
+                <h3>OAuth Flow</h3>
+                <p>
+                  Start über einen Connect-Button in der App, Weiterleitung zu TikTok, Callback zurück an die API und
+                  anschließende Speicherung der Verknüpfung.
+                </p>
+              </article>
+              <article className="cbw-card">
+                <h3>Scope &amp; Daten</h3>
+                <p>
+                  Aktuell wird nur <strong>user.info.basic</strong> genutzt (OpenID, Anzeigename, Avatar). Keine
+                  Veröffentlichungen/Uploads über TikTok.
+                </p>
+              </article>
+              <article className="cbw-card">
+                <h3>Kontrolle</h3>
+                <p>
+                  Verknüpfung kann in der App getrennt werden; Rechte können zusätzlich in TikTok widerrufen werden.
+                </p>
+              </article>
+            </div>
+
+            <div className="cbw-note">
+              <strong>Review-Kontext:</strong> Website-URL ist diese öffentliche Seite. App-Login ist separat. Falls der
+              Reviewer Zugriff auf In-App-Flows benötigt, werden Test-Zugangsdaten im Developer Portal bereitgestellt.
+            </div>
+          </div>
+        </section>
         {/* FAQ */}
         <section id="faq" className="cbw-section">
           <div className="cbw-container">

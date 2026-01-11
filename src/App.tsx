@@ -133,7 +133,13 @@ export default function App() {
       <header className="cbw-header">
         <div className="cbw-container cbw-header-row">
           <div className="cbw-brand">
-            <span className="cbw-dot" />
+            <img
+              className="cbw-mark"
+              src="/clipboost-mark.png"
+              alt=""
+              aria-hidden="true"
+              loading="eager"
+            />
             <div className="cbw-brand-text">
               <div className="cbw-brand-name">CLiP-BOOsT</div>
               <div className="cbw-brand-sub">Stream Assets &amp; Overlay Platform</div>
@@ -360,8 +366,8 @@ export default function App() {
               </div>
               <div className="cbw-contact-box">
                 <div className="cbw-meta-label">E-Mail</div>
-                <a href="mailto:support@clip-boost-website.online">
-                  support@clip-boost-website.online
+                <a href="mailto:clip-boost.online@outlook.de">
+                  clip-boost.online@outlook.de
                 </a>
                 <div className="cbw-meta-label" style={{ marginTop: 12 }}>
                   Produkt
@@ -378,7 +384,13 @@ export default function App() {
         <div className="cbw-container cbw-footer-row">
           <div>
             <div className="cbw-brand">
-              <span className="cbw-dot" />
+              <img
+                className="cbw-mark"
+                src="/clipboost-mark.png"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+              />
               <div className="cbw-brand-text">
                 <div className="cbw-brand-name">CLiP-BOOsT</div>
                 <div className="cbw-brand-sub">Public Product Website</div>

@@ -1,21 +1,16 @@
-// src/pages/LegalLayout.tsx
-import type { PropsWithChildren } from "react";
+import type { ReactNode } from "react";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
-type LegalLayoutProps = PropsWithChildren<{
-  title: string;
-}>;
-
-export default function LegalLayout({ title, children }: LegalLayoutProps) {
+export default function LegalLayout(props: { title: string; children: ReactNode }) {
   return (
     <div className="cbw">
       <SiteHeader />
       <main className="cbw-legal">
         <div className="cbw-container">
           <div className="cbw-legal-card">
-            <h1>{title}</h1>
-            {children}
+            <h1>{props.title}</h1>
+            {props.children}
           </div>
         </div>
       </main>

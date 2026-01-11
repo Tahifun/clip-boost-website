@@ -1,37 +1,46 @@
-export default function SiteHeader() {
-  return (
-    <header className="cbw-header" id="top">
-      <div className="cbw-container cbw-header-row">
-        <a className="cbw-brand" href="#top" aria-label="CLiP-BOOsT">
-          <img
-            className="cbw-mark"
-            src="/clipboost-mark.png"
-            alt="CLiP-BOOsT Logo"
-            width={22}
-            height={22}
-            loading="eager"
-            onError={(e) => {
-              // Falls Datei fehlt/Name falsch: Bild ausblenden, damit Layout nicht „kaputt“ wirkt
-              (e.currentTarget as HTMLImageElement).style.display = "none";
-            }}
-          />
-          <span className="cbw-brand-text">
-            <span className="cbw-brand-name">CLiP-BOOsT</span>
-            <span className="cbw-brand-sub">Stream Assets &amp; Overlay Platform</span>
-          </span>
-        </a>
+// src/components/SiteHeader.tsx
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-        <nav className="cbw-nav" aria-label="Navigation">
-          <a href="#features">Features</a>
-          <a href="#how">Ablauf</a>
-          <a href="#screens">Screens</a>
-          <a href="#faq">FAQ</a>
-          <a href="#contact">Kontakt</a>
+const LOGO_SRC = "/clipboost-mark.png";
+
+export default function SiteHeader() {
+  const [logoOk, setLogoOk] = useState(true);
+
+  return (
+    <header className="cbw-header">
+      <div className="cbw-container cbw-header-row">
+        <Link className="cbw-brand" to="/" aria-label="CLiP-BOOsT – Startseite">
+          {logoOk ? (
+            <img
+              className="cbw-mark"
+              src={LOGO_SRC}
+              alt="CLiP-BOOsT Logo"
+              onError={() => setLogoOk(false)}
+            />
+          ) : (
+            <span className="cbw-dot" aria-hidden />
+          )}
+
+          <div className="cbw-brand-text">
+            <div className="cbw-brand-name">CLiP-BOOsT</div>
+            <div className="cbw-brand-sub">Stream Assets &amp; Overlay Platform</div>
+          </div>
+        </Link>
+
+        <nav className="cbw-nav" aria-label="Seiten-Navigation">
+          <a href="/#features">Features</a>
+          <a href="/#how">Ablauf</a>
+          <a href="/#screens">Screens</a>
+          <a href="/#faq">FAQ</a>
+          <a href="/#contact">Kontakt</a>
         </nav>
 
         <div className="cbw-cta">
-          <a className="cbw-btn cbw-btn-ghost" href="#contact">Kontakt</a>
-          <a className="cbw-btn cbw-btn-primary" href="https://clip-boost.online">
+          <a className="cbw-btn cbw-btn-ghost" href="/#contact">
+            Kontakt
+          </a>
+          <a className="cbw-btn cbw-btn-primary" href="https://www.clip-boost.online">
             Zur App / Login
           </a>
         </div>

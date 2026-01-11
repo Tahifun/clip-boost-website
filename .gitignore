@@ -30,3 +30,8 @@ Desktop.ini
 # env / secrets
 .env
 .env.*
+
+# Windows
+desktop.ini
+Thumbs.db
+

@@ -1,3 +1,4 @@
+import { APP_DOWNLOAD_URL, APP_URL } from "../config/siteLinks";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
@@ -88,7 +89,7 @@ const steps: StepCard[] = [
   {
     n: "01",
     title: "Account & Projekt",
-    text: "App-Zugang anlegen und dein Streaming-Profil initialisieren.",
+    text: "Kostenlos starten, Account anlegen und dein Creator-Setup aufsetzen.",
   },
   {
     n: "02",
@@ -98,7 +99,7 @@ const steps: StepCard[] = [
   {
     n: "03",
     title: "Im Stream einsetzen",
-    text: "Assets integrieren, testen und dein Setup iterativ optimieren.",
+    text: "Im Stream einsetzen, testen, verbessern und bei Bedarf auf Pro erweitern.",
   },
 ];
 
@@ -163,8 +164,8 @@ const faqs: FaqItem[] = [
     a: "Bei TikTok Login wird aktuell nur der Scope user.info.basic genutzt. Gespeichert werden OpenID sowie Anzeigename und Avatar zur Account-Zuordnung. Posting/Publishing erfolgt nicht über diese Integration.",
   },
   {
-    q: "Wie kann ein Reviewer die App testen?",
-    a: "Falls für den Review Zugriff auf die App notwendig ist, kann ein Test-Account bereitgestellt werden (Zugangsdaten in den Review-Notizen im Developer Portal).",
+    q: "Wie starte oder downloade ich CLiP-BOOsT?",
+    a: "Über „App starten“ öffnest du die Web-App. Über „CLiP-BOOsT downloaden“ kannst du einen Installer oder Launcher verlinken, sobald die Datei auf deiner Domain liegt.",
   },
 ];
 
@@ -184,17 +185,25 @@ export default function Home() {
                 klare Workflows, KI-gestützte Erstellung
               </h1>
               <p className="cbw-lead">
-                CLiP-BOOsT ist eine Web-Plattform zur Verwaltung und Erstellung von Streaming-Overlays und Assets.
-                Diese Website ist bewusst eine öffentliche Informationsseite und keine Login-Homepage.
+                CLiP-BOOsT bündelt Overlays, Live-Steuerung, Bot, Polls, Analytics und Minigames in einem Creator-Control-Center. Die Website verkauft das Produkt klar nach außen – der eigentliche Workflow startet in der App.
               </p>
 
               <div className="cbw-hero-actions">
-                <a className="cbw-btn cbw-btn-primary" href="#features">
+                <a className="cbw-btn cbw-btn-primary" href={APP_URL} target="_blank" rel="noreferrer">
+                  App starten
+                </a>
+                <a className="cbw-btn cbw-btn-secondary" href={APP_DOWNLOAD_URL}>
+                  CLiP-BOOsT downloaden
+                </a>
+                <a className="cbw-btn cbw-btn-ghost" href="#features">
                   Features ansehen
                 </a>
-                <a className="cbw-btn cbw-btn-secondary" href="#how">
-                  So funktioniert&apos;s
-                </a>
+              </div>
+
+              <div className="cbw-value-points">
+                <span>Overlay-Management in einem Tool</span>
+                <span>Bot, Polls &amp; Live-Steuerung</span>
+                <span>Free Einstieg, Pro für Creator-Setups</span>
               </div>
 
               <div className="cbw-meta">
@@ -251,11 +260,11 @@ export default function Home() {
         {/* Trust Strip */}
         <section className="cbw-strip">
           <div className="cbw-container cbw-strip-row">
-            <span>Öffentlich erreichbar</span>
+            <span>Kostenlos testen</span>
             <i />
-            <span>Kein Login-Zwang</span>
+            <span>App direkt starten</span>
             <i />
-            <span>Review-konformes Setup</span>
+            <span>Download integrierbar</span>
             <i />
             <span>Transparente Produktbeschreibung</span>
           </div>
@@ -266,7 +275,7 @@ export default function Home() {
           <div className="cbw-container">
             <div className="cbw-section-head">
               <h2>Kernfunktionen</h2>
-              <p>Fokus auf skalierbare Stream-Assets, konsistente Designs und eine klare Nutzerführung.</p>
+              <p>Nicht nur hübsche Overlays: CLiP-BOOsT hilft beim eigentlichen Live-Betrieb – von Assets bis Interaktion.</p>
             </div>
 
             <div className="cbw-grid">
@@ -285,7 +294,7 @@ export default function Home() {
           <div className="cbw-container">
             <div className="cbw-section-head">
               <h2>So funktioniert&apos;s</h2>
-              <p>Drei Schritte vom Setup bis zum einsatzbereiten Stream-Look.</p>
+              <p>Vom ersten Setup bis zum einsatzbereiten Creator-Workflow.</p>
             </div>
 
             <div className="cbw-grid-3">

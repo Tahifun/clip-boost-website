@@ -253,6 +253,26 @@ body {
   margin-bottom: 22px;
 }
 
+
+.cbw-value-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: -4px 0 22px;
+}
+
+.cbw-value-points span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--cb-border-soft);
+  background: rgba(255,255,255,0.04);
+  font-size: 12px;
+  color: var(--cb-text-muted);
+}
+
 /* Meta Cards */
 .cbw-meta {
   display: grid;

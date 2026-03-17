@@ -1,3 +1,5 @@
+import { APP_DOWNLOAD_URL, APP_URL } from "../config/siteLinks";
+
 export default function SiteHeader() {
   return (
     <header className="cbw-header">
@@ -23,13 +25,16 @@ export default function SiteHeader() {
           <a className="cbw-btn cbw-btn-ghost" href="/#contact">
             Kontakt
           </a>
+          <a className="cbw-btn cbw-btn-secondary" href={APP_DOWNLOAD_URL}>
+            Download
+          </a>
           <a
             className="cbw-btn cbw-btn-primary"
-            href="https://www.clip-boost.online"
+            href={APP_URL}
             target="_blank"
             rel="noreferrer"
           >
-            Zur App / Login
+            Kostenlos starten
           </a>
         </div>
       </div>

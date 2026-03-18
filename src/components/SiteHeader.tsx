@@ -1,4 +1,4 @@
-import { APP_DOWNLOAD_URL, APP_URL } from "../config/siteLinks";
+import { APP_DOWNLOAD_PAGE_URL, APP_URL } from "../config/siteLinks";
 
 export default function SiteHeader() {
   return (
@@ -25,7 +25,7 @@ export default function SiteHeader() {
           <a className="cbw-btn cbw-btn-ghost" href="/#contact">
             Kontakt
           </a>
-          <a className="cbw-btn cbw-btn-secondary" href={APP_DOWNLOAD_URL}>
+          <a className="cbw-btn cbw-btn-secondary" href={APP_DOWNLOAD_PAGE_URL}>
             Download
           </a>
           <a

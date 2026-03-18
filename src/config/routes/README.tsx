@@ -1,0 +1,1 @@
+Diese Version ersetzt die Tailwind-Klassen der Download-Seite durch das vorhandene cbw-Layout der Website. Zusätzlich zeigt der Header-Download-Button jetzt auf die Download-Seite statt direkt auf die EXE.

@@ -1,0 +1,12 @@
+Diese Dateien sorgen dafür, dass der Download-Button der Website auf /download zeigt.
+
+Enthalten:
+- src/pages/Home.tsx
+- src/App.tsx
+- src/config/siteLinks.ts
+- vercel.json
+
+Wichtig:
+Wenn https://clip-boost.online/download trotz dieser Dateien weiter 404 zeigt,
+liegt das nicht mehr am Code dieser Website, sondern daran, dass auf der Domain
+noch nicht der richtige Website-Deploy live ist oder die Domain auf das falsche Projekt zeigt.

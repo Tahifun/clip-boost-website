@@ -1,4 +1,4 @@
-import { APP_DOWNLOAD_URL, APP_URL } from "../config/siteLinks";
+import { APP_DOWNLOAD_PAGE_URL, APP_URL } from "../config/siteLinks";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 
@@ -165,7 +165,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Wie starte oder downloade ich CLiP-BOOsT?",
-    a: "Über „App starten“ öffnest du die Web-App. Über „CLiP-BOOsT downloaden“ kannst du einen Installer oder Launcher verlinken, sobald die Datei auf deiner Domain liegt.",
+    a: "Über „App starten“ öffnest du die Web-App. Über „CLiP-BOOsT downloaden“ gelangst du auf die Download-Seite der Website und kannst dort den Windows-Installer laden.",
   },
 ];
 
@@ -192,7 +192,7 @@ export default function Home() {
                 <a className="cbw-btn cbw-btn-primary" href={APP_URL} target="_blank" rel="noreferrer">
                   App starten
                 </a>
-                <a className="cbw-btn cbw-btn-secondary" href={APP_DOWNLOAD_URL}>
+                <a className="cbw-btn cbw-btn-secondary" href={APP_DOWNLOAD_PAGE_URL}>
                   CLiP-BOOsT downloaden
                 </a>
                 <a className="cbw-btn cbw-btn-ghost" href="#features">

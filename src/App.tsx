@@ -4,11 +4,13 @@ import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import AGB from "./pages/AGB";
 import Terms from "./pages/Terms";
+import Download from "./pages/Download";
 
 export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/download" element={<Download />} />
       <Route path="/impressum" element={<Impressum />} />
       <Route path="/datenschutz" element={<Datenschutz />} />
       <Route path="/agb" element={<AGB />} />

@@ -1,4 +1,9 @@
-export const APP_URL = "https://www.clip-boost.online";
+export const APP_URL = "https://clip-boost.online";
+
+/**
+ * Öffentliche Download-Seite der Website.
+ */
+export const APP_DOWNLOAD_PAGE_URL = "https://clip-boost-website.online/download";
 
 /**
  * Direkter Installer-Download.
@@ -6,9 +11,4 @@ export const APP_URL = "https://www.clip-boost.online";
  * /public/downloads/clip-boost-setup.exe
  */
 export const APP_DOWNLOAD_URL =
-  "https://www.clip-boost.online/downloads/clip-boost-setup.exe";
-
-/**
- * Öffentliche Download-Seite der Website.
- */
-export const APP_DOWNLOAD_PAGE_URL = "https://www.clip-boost.online/download";
+  "https://clip-boost-website.online/downloads/clip-boost-setup.exe";

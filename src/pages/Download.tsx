@@ -1,4 +1,8 @@
-import { APP_DOWNLOAD_URL, APP_DOWNLOAD_PAGE_URL, APP_URL } from "../config/siteLinks";
+import {
+  APP_DOWNLOAD_PAGE_URL,
+  APP_DOWNLOAD_URL,
+  APP_URL,
+} from "../config/siteLinks";
 import SiteHeader from "../components/SiteHeader";
 import SiteFooter from "../components/SiteFooter";
 

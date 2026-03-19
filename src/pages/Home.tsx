@@ -32,11 +32,6 @@ type FaqItem = {
   a: string;
 };
 
-/**
- * HINWEIS:
- * Diese Pfade müssen im /public existieren, sonst sind es "nur" 404-Assets (Build bleibt trotzdem ok).
- * Passe die Dateinamen an deine echten Public-Dateien an.
- */
 const heroMiniCards: HeroMiniCard[] = [
   {
     key: "tiktok",
@@ -165,7 +160,7 @@ const faqs: FaqItem[] = [
   },
   {
     q: "Wie starte oder downloade ich CLiP-BOOsT?",
-    a: "Über „App starten“ öffnest du die Web-App. Über „CLiP-BOOsT downloaden“ gelangst du auf die Download-Seite der Website und kannst dort den Windows-Installer laden.",
+    a: "Über „App starten“ öffnest du die Web-App. Über „CLiP-BOOsT downloaden“ gelangst du auf die Download-Seite der Website und kannst dort die aktuelle Desktop-App herunterladen.",
   },
 ];
 
@@ -174,7 +169,6 @@ export default function Home() {
     <div className="cbw">
       <SiteHeader />
       <main>
-        {/* Hero */}
         <section className="cbw-hero">
           <div className="cbw-container cbw-hero-grid">
             <div>
@@ -222,7 +216,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Hero Visual */}
             <div className="cbw-visual">
               <div className="cbw-visual-panel">
                 <div className="cbw-visual-head">
@@ -257,7 +250,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Trust Strip */}
         <section className="cbw-strip">
           <div className="cbw-container cbw-strip-row">
             <span>Kostenlos testen</span>
@@ -270,7 +262,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Features */}
         <section id="features" className="cbw-section">
           <div className="cbw-container">
             <div className="cbw-section-head">
@@ -289,7 +280,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* How it works */}
         <section id="how" className="cbw-section cbw-section-alt">
           <div className="cbw-container">
             <div className="cbw-section-head">
@@ -314,7 +304,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* App Screens */}
         <section id="screens" className="cbw-section cbw-section-screens">
           <div className="cbw-container">
             <div className="cbw-section-head">
@@ -339,7 +328,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* TikTok Integration */}
         <section id="tiktok" className="cbw-section cbw-section-alt">
           <div className="cbw-container">
             <div className="cbw-section-head">
@@ -379,7 +367,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        {/* FAQ */}
+
         <section id="faq" className="cbw-section">
           <div className="cbw-container">
             <div className="cbw-section-head">
@@ -398,9 +386,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Kontakt */}
         <section id="kontakt" className="cbw-section cbw-section-alt">
-          {/* Fallback-Anker falls irgendwo noch #contact verlinkt ist */}
           <div id="contact" />
           <div className="cbw-container">
             <div className="cbw-contact">

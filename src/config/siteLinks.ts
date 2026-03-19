@@ -11,4 +11,4 @@ export const APP_DOWNLOAD_PAGE_URL = "https://clip-boost-website.online/download
  * /public/downloads/clip-boost-setup.exe
  */
 export const APP_DOWNLOAD_URL =
-  "https://clip-boost-website.online/downloads/clip-boost-setup.exe";
+  "https://github.com/Tahifun/CLiP-BOOsT_002/releases/download/v0.1.8/CLiP-BOOsT-Helper.zip";

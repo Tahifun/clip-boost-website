@@ -45,18 +45,18 @@ export default function Download() {
   const heroTitle = isWindows
     ? "CLiP BOOsT für Windows herunterladen"
     : isMac
-      ? "CLiP BOOsT für macOS"
+      ? "CLiP BOOsT für macOS herunterladen"
       : isLinux
-        ? "CLiP BOOsT für Linux"
+        ? "CLiP BOOsT für Linux herunterladen"
         : "CLiP BOOsT herunterladen";
 
   const heroLead = isWindows
-    ? "Hol dir die aktuelle Windows-Version von CLiP BOOsT und starte direkt mit deinem lokalen Workflow für OBS, Overlays und Live-Setups."
+    ? "Lade die aktuelle Windows-Version von CLiP BOOsT herunter und starte direkt mit deinem lokalen Workflow."
     : isMac
-      ? "Starte CLiP BOOsT auf macOS mit einem klaren, OBS-zentrierten Setup-Flow – ohne Windows-Helper und ohne unnötige Umwege."
+      ? "Lade die aktuelle macOS-Version von CLiP BOOsT herunter und richte dein Setup direkt auf deinem Desktop ein."
       : isLinux
-        ? "Starte CLiP BOOsT auf Linux mit einem klaren, OBS-zentrierten Setup-Flow – ohne Windows-Helper und ohne unnötige Umwege."
-        : "Wähle den passenden Download- oder Setup-Flow für dein System und bring CLiP BOOsT schnell in deinen Workflow.";
+        ? "Lade die aktuelle Linux-Version von CLiP BOOsT herunter und starte direkt mit deinem Desktop-Setup."
+        : "Wähle den passenden Desktop-Download für dein System und bring CLiP BOOsT direkt in deinen Workflow.";
 
   const primaryHref = isWindows
     ? APP_DOWNLOAD_URL
@@ -69,37 +69,25 @@ export default function Download() {
   const primaryLabel = isWindows
     ? "Windows-Installer herunterladen"
     : isMac
-      ? "macOS-Download öffnen"
+      ? "macOS-Download starten"
       : isLinux
-        ? "Linux-Download öffnen"
+        ? "Linux-Download starten"
         : "Zur App";
 
-  const secondaryHref = isWindows
-    ? APP_URL
-    : isMac
-      ? `${APP_URL}/desktop-setup?platform=macos`
-      : isLinux
-        ? `${APP_URL}/desktop-setup?platform=linux`
-        : APP_URL;
+  const secondaryHref = APP_URL;
 
-  const secondaryLabel = isWindows
-    ? "Zur App"
-    : isMac
-      ? "macOS Setup öffnen"
-      : isLinux
-        ? "Linux Setup öffnen"
-        : "Desktop Setup öffnen";
+  const secondaryLabel = "Zur App";
 
   const platformPill = isWindows
     ? "Windows Download"
     : isMac
-      ? "macOS Setup"
+      ? "macOS Download"
       : isLinux
-        ? "Linux Setup"
+        ? "Linux Download"
         : "Download";
 
-  const sectionTitle = isWindows ? "Direkter Download" : "Download & Setup";
-  const guideTitle = isWindows ? "Schnellstart" : "In wenigen Schritten startklar";
+  const sectionTitle = "Direkter Download";
+  const guideTitle = "In wenigen Schritten startklar";
 
   return (
     <div className="cbw">
@@ -144,8 +132,12 @@ export default function Download() {
                     style={{ marginBottom: 16, maxWidth: "none" }}
                   >
                     {isWindows
-                      ? "Lade die aktuelle Windows-Version herunter, installiere CLiP BOOsT lokal und verbinde dein Setup direkt mit deinem bestehenden Workflow."
-                      : "Für macOS und Linux führt dich CLiP BOOsT zunächst in den passenden Setup-Flow. Sobald native Desktop-Builds verfügbar sind, kannst du hier direkt die richtige Version herunterladen."}
+                      ? "Lade den aktuellen Windows-Installer herunter, installiere CLiP BOOsT lokal und starte direkt mit deinem Setup."
+                      : isMac
+                        ? "Lade die aktuelle macOS-Version herunter und installiere CLiP BOOsT direkt auf deinem Gerät."
+                        : isLinux
+                          ? "Lade die aktuelle Linux-Version herunter und starte CLiP BOOsT direkt auf deinem Desktop."
+                          : "Wähle den passenden Download für dein System und starte mit CLiP BOOsT."}
                   </p>
 
                   <div className="cbw-hero-actions" style={{ marginBottom: 0 }}>
@@ -172,37 +164,20 @@ export default function Download() {
                 <div className="cbw-card" style={{ padding: 22 }}>
                   <h2 style={{ marginTop: 0, fontSize: 28 }}>{guideTitle}</h2>
 
-                  {isWindows ? (
-                    <ol
-                      style={{
-                        margin: "14px 0 0 18px",
-                        padding: 0,
-                        color: "var(--cb-text-muted)",
-                        lineHeight: 1.8,
-                        fontSize: 15,
-                      }}
-                    >
-                      <li>Installer herunterladen</li>
-                      <li>CLiP BOOsT lokal installieren</li>
-                      <li>App starten und Setup verbinden</li>
-                      <li>Direkt mit deinem Workflow loslegen</li>
-                    </ol>
-                  ) : (
-                    <ol
-                      style={{
-                        margin: "14px 0 0 18px",
-                        padding: 0,
-                        color: "var(--cb-text-muted)",
-                        lineHeight: 1.8,
-                        fontSize: 15,
-                      }}
-                    >
-                      <li>OBS herunterladen oder öffnen</li>
-                      <li>Das passende Plattform-Setup starten</li>
-                      <li>Overlays, Alerts und Live Setup vorbereiten</li>
-                      <li>CLiP BOOsT in deinen OBS-Workflow einbinden</li>
-                    </ol>
-                  )}
+                  <ol
+                    style={{
+                      margin: "14px 0 0 18px",
+                      padding: 0,
+                      color: "var(--cb-text-muted)",
+                      lineHeight: 1.8,
+                      fontSize: 15,
+                    }}
+                  >
+                    <li>Passenden Download für dein System starten</li>
+                    <li>CLiP BOOsT lokal installieren</li>
+                    <li>App öffnen und einrichten</li>
+                    <li>Direkt mit deinem Workflow loslegen</li>
+                  </ol>
 
                   <div className="cbw-note" style={{ marginTop: 22 }}>
                     Öffentliche Download-Seite:

@@ -9,18 +9,16 @@ export const APP_DOWNLOAD_PAGE_URL = "https://clip-boost-website.online/download
  * Direkter Windows-Installer über GitHub Release.
  */
 export const APP_DOWNLOAD_URL =
-  "https://github.com/Tahifun/CLiP-BOOsT_002/releases/download/v0.1.8/CLiP-BOOsT-Desktop-Setup.exe";
+  "https://github.com/Tahifun/clip-boost-website/releases/download/app-v0.1.0/CLiP.BOOsT.Website_0.1.0_x64-setup.exe";
 
 /**
- * Platzhalter für macOS-Download.
- * Später hier z. B. eine .dmg oder .pkg eintragen.
+ * Direkter macOS-Download über GitHub Release.
  */
 export const APP_DOWNLOAD_URL_MAC =
-  "https://clip-boost.online/desktop-setup?platform=macos";
+  "https://github.com/Tahifun/clip-boost-website/releases/download/app-v0.1.0/CLiP.BOOsT.Website_0.1.0_aarch64.dmg";
 
 /**
- * Platzhalter für Linux-Download.
- * Später hier z. B. eine .AppImage oder .deb eintragen.
+ * Direkter Linux-Download über GitHub Release.
  */
 export const APP_DOWNLOAD_URL_LINUX =
-  "https://clip-boost.online/desktop-setup?platform=linux";
+  "https://github.com/Tahifun/clip-boost-website/releases/download/app-v0.1.0/CLiP.BOOsT.Website_0.1.0_amd64.AppImage";

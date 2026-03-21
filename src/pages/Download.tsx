@@ -41,7 +41,6 @@ export default function Download() {
   const isWindows = platform === "windows";
   const isMac = platform === "mac";
   const isLinux = platform === "linux";
-  const isOther = platform === "other";
 
   const heroTitle = isWindows
     ? "CLiP BOOsT für Windows herunterladen"

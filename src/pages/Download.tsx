@@ -75,7 +75,6 @@ export default function Download() {
         : "Zur App";
 
   const secondaryHref = APP_URL;
-
   const secondaryLabel = "Zur App";
 
   const platformPill = isWindows
